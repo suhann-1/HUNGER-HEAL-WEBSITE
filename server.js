@@ -7,6 +7,7 @@ require("dotenv").config();
 const donorRoutes = require("./routes/donorRoutes");
 const volunteerRoutes = require("./routes/volunteerRoutes");
 const donationRoutes = require("./routes/donationRoutes");
+const FeedbackRoutes = require("./routes/FeedbackRoutes");
 const app = express();
 
 // Middleware
@@ -26,6 +27,7 @@ mongoose
 app.use("/api/donor", donorRoutes);
 app.use("/api/volunteer", volunteerRoutes);
 app.use("/api/donations", donationRoutes);
+app.use("/api/feedback",FeedbackRoutes)
 // Default Route
 app.get("/", (req, res) => {
   res.send("Hunger & Heal Backend is Running...");
